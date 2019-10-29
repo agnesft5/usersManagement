@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Useres Manegement</title>
+</head>
+
+<body>
+    <div class="banner body__banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="addButton__container">
+                        <button type="button" class="btn btn-primary float-right mt-3 mr-5"> <i class="fa fa-plus"></i>
+                            Add New Employee</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="profile__col">Profile</th>
+                                <th scope="col" class="name__col">Name</th>
+                                <th scope="col" class="salary__col">Salary</th>
+                                <th scope="col" class="age__col">Age</th>
+                                <th scope="col" class="action__col">Action</th>
+                            </tr>
+                            <tr>
+                                <th colspan="5">
+                                    <input type="search" class="form-control" placeholder="Global search">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4eJ3OolirjUOZvZnkWn9sVTjcaDm8uLcyqnLFMNOm9kz56SvD&s" class="user__img"></td>
+                                <td>name</td>
+                                <td>salary</td>
+                                <td>age</td>
+                                <td>
+                                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                        <button type="button" class="btn btn-light"><i class="fa fa-pencil"></i></button>
+                                        <button type="button" class="btn btn-danger"><i class="fa fa-trash delete__icon"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
