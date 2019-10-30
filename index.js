@@ -168,12 +168,12 @@ function saveEdited() {
         "type": "PUT",
         "url": `http://dummy.restapiexample.com/api/v1/update/${employeeId}`,
         "dataType": "json",
-        "data": JSON.stringify({ objEdited }),
+        "data": JSON.stringify(objEdited),
         "headers": {
             "Content-Type": "application/json",
             "X-Requested-Width": "XMLHttpRequest"
         },
-        "succes": (data) => {
+        "success": (data) => {
             console.log(data)
             alert("Changes saved!")
         },
@@ -227,12 +227,12 @@ function createUser() {
         "type": "POST",
         "url": `http://dummy.restapiexample.com/api/v1/create`,
         "dataType": "json",
-        "data": JSON.stringify({ objCreated }),
+        "data": JSON.stringify(objCreated),
         "headers": {
             "Content-Type": "application/json",
             "X-Requested-Width": "XMLHttpRequest"
         },
-        "succes": (data) => {
+        "success": (data) => {
             console.log(data)
             alert("Well done!!")
         },
