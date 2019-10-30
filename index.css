@@ -31,3 +31,12 @@
     border-radius: .25rem;
     margin-left: 15%;
 }
+#searchModal{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#createModal, #editModal{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.createModal__label , .createModal__text, .editModal__label, .editModal__text{
+    margin-top:15%;
+}
