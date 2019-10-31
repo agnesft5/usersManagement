@@ -57,7 +57,10 @@ function printEmployees(data) {
     /////////// EVENT LISTENER AL BOTÓ DELETE /////////
     $(".deleteButton").off();
     $(".deleteButton").each(function () {
-        $(this).click(() => { deleteUser(this) })
+        $(this).click(() => {
+
+            areUSure(this)
+        })
 
     })
 
@@ -179,7 +182,7 @@ function saveEdited() {
         },
         "success": (data) => {
             console.log(data)
-            alert("Changes saved!")
+            wellDone()
             $(".userTable").empty();
             getEmployees();
 
@@ -195,6 +198,28 @@ function saveEdited() {
     editedSalary = $(".editModal__inputSalary").val("")
     employeeId = $(".editModal__inputId").val("")
 }
+
+/////////////// ALERT DE BORRAR ///////////////////
+function areUSure() {
+    $.confirm({
+        title: `<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Delete user?</span>`,
+        content: `<span style="font-family: Georgia, 'Times New Roman', Times, serif;">This dialog will automatically trigger \'cancel\' in 6 seconds if you don\'t respond.</span>`,
+        autoClose: 'cancelAction|8000',
+        buttons: {
+            deleteUser: {
+                text: `<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Delete user</span>`,
+                action: function () {
+                    $.alert(`<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Deleted the user!</span>`);
+                    deleteUser()
+                }
+            },
+            cancelAction: function () {
+                $.alert(`<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Action is canceled</span>`);
+            }
+        }
+    })
+}
+
 
 ///////////// FUNCION PARA BORRAR /////////////
 function deleteUser(deleteButton) {
@@ -222,6 +247,26 @@ function deleteUser(deleteButton) {
 
 }
 
+////////////////// ALERT WELL DONE//////////////////////
+
+function wellDone() {
+    $.confirm({
+        title: `<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Well done!</span>`,
+        content: `<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Your changes are saved!!</span>`,
+        type: 'green',
+        typeAnimated: true,
+        buttons: {
+            wellDone: {
+                text: `<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Thank you!</span>`,
+                btnClass: 'btn-green',
+                action: function () {
+                }
+            }
+        }
+    });
+}
+
+
 
 /////////////////// FUNCIÓ PER CREAR UN USUARI /////////////////////////////
 function createUser() {
@@ -248,7 +293,7 @@ function createUser() {
         },
         "success": (data) => {
             console.log(data)
-            alert("Well done!!")
+            wellDone()
             $(".userTable").empty()
             getEmployees()
         },
