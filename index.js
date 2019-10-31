@@ -37,16 +37,19 @@ function printEmployees(data) {
 
 
     /////////// EVENT LISTENER AL BOTÓ SEARCH /////////
+    $(".searchButton").off()
     $(".searchButton").each(function () {
         $(this).click(() => { getUser(this) })
     })
 
     /////////// EVENT LISTENER AL BOTÓ EDIT /////////
+    $(".editButton").off()
     $(".editButton").each(function () {
         $(this).click(() => { getUser(this) })
     })
 
     /////////// EVENT LISTENER AL BOTÓ SAVE CHANGES DINS DEL MODAL EDIT /////////
+    $(".editSaveChanges").off()
     $(".editSaveChanges").each(function () {
         $(this).click(() => { saveEdited() })
     })
@@ -59,6 +62,7 @@ function printEmployees(data) {
     })
 
     /////////// EVENT LISTENER AL BOTÓ ADD /////////
+    $(".addUserButton").off()
     $(".addUserButton").each(function () {
         $(this).click(() => { createUser() })
     })
@@ -176,6 +180,9 @@ function saveEdited() {
         "success": (data) => {
             console.log(data)
             alert("Changes saved!")
+            $(".userTable").empty();
+            getEmployees();
+
         },
         "error": (error) => {
             console.log(error)
@@ -183,6 +190,10 @@ function saveEdited() {
         }
 
     })
+    editedName = $(".editModal__inputName").val("")
+    editedAge = $(".editModal__inputAge").val("")
+    editedSalary = $(".editModal__inputSalary").val("")
+    employeeId = $(".editModal__inputId").val("")
 }
 
 ///////////// FUNCION PARA BORRAR /////////////
@@ -201,6 +212,9 @@ function deleteUser(deleteButton) {
         "success": (data) => {
             console.log(data)
             tr.remove();
+            $(".userTable").empty();
+            getEmployees();
+
         },
         "error": (error) => { console.log(error) },
     })
@@ -235,6 +249,8 @@ function createUser() {
         "success": (data) => {
             console.log(data)
             alert("Well done!!")
+            $(".userTable").empty()
+            getEmployees()
         },
         "error": (error) => {
             console.log(error)
@@ -242,6 +258,10 @@ function createUser() {
         }
 
     })
+    newName = $(".createModal__inputName").val("")
+    newAge = $(".createModal__inputAge").val("")
+    newSalary = $(".createModal__inputSalary").val("")
+
 }
 
 
